@@ -138,7 +138,7 @@ public class Lista<T> implements Collection<T> {
         longi++;
     }
 
-    private Nodo buscaElemento(T elemento){
+    Nodo buscaElemento(T elemento){
         Nodo n = cabeza;
         while(n !=null){
             if (elemento.equals(n.elemento)) {
