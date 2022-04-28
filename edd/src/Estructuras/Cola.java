@@ -38,4 +38,25 @@ public class Cola<T> extends PushPop<T> {
         ultimo.siguiente = nuevo;
         ultimo = nuevo;
     }
+
+    /**
+     * Regresa un clon de la estructura.
+     * 
+     * @return un clon de la estructura.
+     */
+    @Override
+    public Cola<T> clone(){
+        Cola<T> nueva = new Cola<T>();
+        if (this.isEmpty()) {
+            return nueva;
+        }
+        nueva.push(this.cabeza.elemento);
+        Nodo n = this.cabeza;
+        while (n.siguiente != null) {
+           nueva.push(n.siguiente.elemento);
+           n = n.siguiente;
+        }
+        return nueva;
+
+    }
 }
